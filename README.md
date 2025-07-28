@@ -43,30 +43,7 @@ The-High-Ground-2.0/
 └── README.md           # This file
 ```
 
-## 🚀 Getting Started
 
-### **Prerequisites**
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- Node.js (optional, for local development server)
-
-### **Installation & Running**
-
-#### **Option 1: Direct Browser Access**
-1. Download or clone the repository
-2. Open `index.html` directly in your browser
-3. The application will load immediately
-
-#### **Option 2: Local Development Server**
-1. Navigate to the project directory
-2. Run a local server:
-   ```bash
-   # Using Node.js
-   npx http-server -p 8000
-   
-   # Using Python (if available)
-   python -m http.server 8000
-   ```
-3. Open `http://localhost:8000` in your browser
 
 ## 🎮 Usage Guide
 
