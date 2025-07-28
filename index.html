@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The High Ground 2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <div class="profile-picture">
+                <img src="Images/sama.png" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h3>Toji</h3>
+                <p>Administrator</p>
+            </div>
+            <div class="profile-buttons">
+                <button class="profile-button" onclick="showProfile()">
+                    <span class="button-icon">👤</span>
+                    Profile
+                </button>
+                <button class="logout-button" onclick="logout()">
+                    <span class="button-icon">🚪</span>
+                    Logout
+                </button>
+            </div>
+        </div>
+        <div class="sidebar-buttons">
+            <button class="sidebar-button active" onclick="showContent('home')">
+                <span class="button-icon">🏠</span>
+                Home
+            </button>
+            <button class="sidebar-button" onclick="showContent('about')">
+                <span class="button-icon">👥</span>
+                Member List
+            </button>
+
+            <button class="sidebar-button" onclick="showContent('inventory')">
+                <span class="button-icon">📦</span>
+                Guild Inventory
+            </button>
+            <button class="sidebar-button" onclick="showContent('todo')">
+                <span class="button-icon">✅</span>
+                To Do
+            </button>
+            <button class="sidebar-button" onclick="showContent('events')">
+                <span class="button-icon">📅</span>
+                Events
+            </button>
+            <button class="sidebar-button" onclick="showContent('forhire')">
+                <span class="button-icon">💼</span>
+                For Hire
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="home" class="content-area">
+            <div class="home-container">
+                <div class="welcome-header">
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span class="status-text">ONLINE</span>
+                    </div>
+                    <div class="welcome-message">
+                        <h1 class="welcome-title">WELCOME BACK, <span class="profile-name">TOJI</span></h1>
+                        <div class="welcome-subtitle">GUILD TERMINAL v2.0.1</div>
+                    </div>
+                </div>
+                
+                <div class="welcome-info-section">
+                    <h3 class="section-title">GUILD OVERVIEW</h3>
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <div class="overview-icon">👥</div>
+                            <div class="overview-info">
+                                <div class="overview-label">ACTIVE MEMBERS</div>
+                                <div class="overview-value">32</div>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">📦</div>
+                            <div class="overview-info">
+                                <div class="overview-label">INVENTORY ITEMS</div>
+                                <div class="overview-value">8</div>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">⚡</div>
+                            <div class="overview-info">
+                                <div class="overview-label">SYSTEM STATUS</div>
+                                <div class="overview-value">OPTIMAL</div>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-icon">⏱️</div>
+                            <div class="overview-info">
+                                <div class="overview-label">SESSION TIME</div>
+                                <div class="overview-value" id="session-time">00:00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quick-access">
+                    <h3 class="section-title">QUICK ACCESS</h3>
+                    <div class="access-grid">
+                        <div class="access-card" onclick="showContent('about')">
+                            <div class="access-icon">👥</div>
+                            <div class="access-text">MEMBER LIST</div>
+                        </div>
+                        <div class="access-card" onclick="showContent('inventory')">
+                            <div class="access-icon">📦</div>
+                            <div class="access-text">INVENTORY</div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="system-log">
+                    <h3 class="section-title">SYSTEM LOG</h3>
+                    <div class="log-entries">
+                        <div class="log-entry">
+                            <span class="log-time">[12:34:56]</span>
+                            <span class="log-message">Terminal initialized successfully</span>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-time">[12:34:57]</span>
+                            <span class="log-message">User authentication verified</span>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-time">[12:34:58]</span>
+                            <span class="log-message">Guild data synchronized</span>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-time">[12:34:59]</span>
+                            <span class="log-message">Ready for user input</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="content-area hidden">
+            <h2>Member List</h2>
+            <div class="member-list">
+                <div class="member-item" onclick="openMemberProfile('Toji', 'Administrator', 'online', ['SCOUT', 'GUARD', 'FLIGHT COMMANDER'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Toji">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Toji</h4>
+                        <p>Administrator</p>
+                    </div>
+                </div>
+                
+                <div class="member-item" onclick="openMemberProfile('Sarah', 'Moderator', 'online', ['CARRIER PILOT', 'ESCORT'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Sarah">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Sarah</h4>
+                        <p>Moderator</p>
+                    </div>
+                </div>
+                
+                <div class="member-item" onclick="openMemberProfile('Mike', 'Member', 'offline', ['THUMPER', 'MECHANIC'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Mike">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Mike</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item" onclick="openMemberProfile('Jessica', 'Member', 'online', ['ASSAULT PILOT', 'HARVESTER'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Jessica">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Jessica</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item" onclick="openMemberProfile('David', 'Member', 'away', ['SCOUT', 'GUARD'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="David">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>David</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item" onclick="openMemberProfile('Emma', 'Member', 'online', ['FLIGHT COMMANDER', 'CARRIER PILOT'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Emma">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Emma</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item" onclick="openMemberProfile('Alex', 'Moderator', 'online', ['ASSAULT PILOT', 'ESCORT', 'THUMPER'])">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Alex">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Alex</h4>
+                        <p>Moderator</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Sophie">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Sophie</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Ryan">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ryan</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Lisa">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Lisa</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Chris">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Chris</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Nina">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nina</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Tom">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Tom</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Zoe">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Zoe</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Jake">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Jake</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Maya">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Maya</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Ben">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ben</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Ava">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ava</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Sam">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Sam</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Grace">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Grace</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Leo">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Leo</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Ruby">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ruby</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Max">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Max</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Chloe">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Chloe</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Owen">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Owen</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Lily">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Lily</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Ethan">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ethan</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Hannah">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Hannah</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Dylan">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Dylan</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Isabella">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Isabella</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Caleb">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Caleb</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Sofia">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Sofia</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Nathan">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nathan</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Victoria">
+                        <div class="status-bubble away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Victoria</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Adrian">
+                        <div class="status-bubble online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Adrian</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">
+                        <img src="Images/sama.png" alt="Scarlett">
+                        <div class="status-bubble offline"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Scarlett</h4>
+                        <p>Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="services" class="content-area hidden">
+            <h2>Our Services</h2>
+            <p>Discover what we offer and how we can help you achieve your goals. From consulting to implementation, we're here to support your success.</p>
+        </div>
+
+
+
+        <div id="inventory" class="content-area hidden">
+            <div class="inventory-header">
+                <h2>Guild Inventory</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="inventory-container">
+                <div class="inventory-overview">
+                    <h3>Guild Inventory Overview</h3>
+                    <div class="overview-line"></div>
+                    
+                    <div class="inventory-sections">
+                        <div class="inventory-section">
+                            <h4>Materials</h4>
+                            <div class="item-list" id="materials-list">
+                                <div class="inventory-item">
+                                    <div class="item-icon">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDkuNzRMMTIgMTZMMTAuOTEgOS43NEw0IDlMMTAuOTEgOC4yNkwxMiAyWiIgZmlsbD0iIzhjNWNmNiIvPgo8L3N2Zz4K" alt="Default Icon">
+                                    </div>
+                                    <span class="item-name">Spice Melange</span>
+                                    <span class="item-quantity">100,000</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="inventory-item">
+                                    <div class="item-icon">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDkuNzRMMTIgMTZMMTAuOTEgOS43NEw0IDlMMTAuOTEgOC4yNkwxMiAyWiIgZmlsbD0iIzQ2ODVmYiIvPgo8L3N2Zz4K" alt="Default Icon">
+                                    </div>
+                                    <span class="item-name">Water</span>
+                                    <span class="item-quantity">50,000</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="inventory-item">
+                                    <div class="item-icon">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDkuNzRMMTIgMTZMMTAuOTEgOS43NEw0IDlMMTAuOTEgOC4yNkwxMiAyWiIgZmlsbD0iI2Y1OTM2YiIvPgo8L3N2Zz4K" alt="Default Icon">
+                                    </div>
+                                    <span class="item-name">Schematic</span>
+                                    <span class="item-quantity">25,000</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="inventory-item">
+                                    <div class="item-icon">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDkuNzRMMTIgMTZMMTAuOTEgOS43NEw0IDlMMTAuOTEgOC4yNkwxMiAyWiIgZmlsbD0iIzEwYjM4MSIvPgo8L3N2Zz4K" alt="Default Icon">
+                                    </div>
+                                    <span class="item-name">Armor</span>
+                                    <span class="item-quantity">10</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="inventory-section">
+                            <h4>Schematics</h4>
+                            <div class="item-list" id="schematics-list">
+                                <div class="inventory-item">
+                                    <div class="item-icon">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDkuNzRMMTIgMTZMMTAuOTEgOS43NEw0IDlMMTAuOTEgOC4yNkwxMiAyWiIgZmlsbD0iI2Y1OWUwYiIvPgo8L3N2Zz4K" alt="Default Icon">
+                                    </div>
+                                    <span class="item-name">Ornithopter Mk. I</span>
+                                    <span class="item-quantity">5</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="inventory-item">
+                                    <span class="item-name">Stillsuit Mk. II</span>
+                                    <span class="item-quantity">12</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="inventory-item">
+                                    <span class="item-name">Carrier Mk 2</span>
+                                    <span class="item-quantity">3</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                                <div class="inventory-item">
+                                    <span class="item-name">Carier Mk 4</span>
+                                    <span class="item-quantity">1</span>
+                                    <div class="item-actions">
+                                        <button class="edit-btn" onclick="editItem(this)">✏️</button>
+                                        <button class="delete-btn" onclick="deleteItem(this)">🗑️</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="view-logs-btn" onclick="showLogs()">View Logs</button>
+                </div>
+                
+                <div class="add-item-section">
+                    <h4>Add New Item</h4>
+                    <div class="add-item-form">
+                        <select id="item-category" class="form-input">
+                            <option value="materials">Materials</option>
+                            <option value="schematics">Schematics</option>
+                        </select>
+                        <input type="text" id="item-name" class="form-input" placeholder="Item Name">
+                        <input type="number" id="item-quantity" class="form-input" placeholder="Quantity" min="0">
+                        <div class="icon-selector">
+                            <button type="button" class="icon-btn" onclick="openIconSelector()">
+                                <span id="selected-icon-text">Select Icon</span>
+                                <img id="selected-icon-preview" class="icon-preview" style="display: none;" alt="Selected Icon">
+                            </button>
+                        </div>
+                        <button class="add-item-btn" onclick="addItem()">Add Item</button>
+                    </div>
+                </div>
+                
+                <div id="icon-modal" class="modal hidden">
+                    <div class="modal-content icon-modal-content">
+                        <div class="modal-header">
+                            <h3>Select Item Icon</h3>
+                            <button class="close-btn" onclick="closeIconSelector()">×</button>
+                        </div>
+                        <div class="icon-modal-body">
+                            <div class="icon-upload-section">
+                                <h4>Upload New Icon</h4>
+                                <input type="file" id="icon-upload" accept="image/*" onchange="handleIconUpload(event)">
+                                <p class="upload-hint">Upload PNG, JPG, or GIF (max 2MB)</p>
+                            </div>
+                            <div class="icon-gallery-section">
+                                <h4>Previously Used Icons</h4>
+                                <div class="icon-gallery" id="icon-gallery">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="logs-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Inventory Logs</h3>
+                        <button class="close-btn" onclick="closeLogs()">×</button>
+                    </div>
+                    <div class="logs-container" id="logs-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="todo" class="content-area hidden">
+            <div class="todo-header">
+                <h2>To Do List</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="todo-container">
+                <div class="todo-overview">
+                    <h3>Guild Tasks & Objectives</h3>
+                    <div class="overview-line"></div>
+                    <div class="todo-list" id="todo-list">
+                        <div class="todo-item">
+                            <div class="todo-checkbox">
+                                <input type="checkbox" id="todo-1">
+                                <label for="todo-1"></label>
+                            </div>
+                            <div class="todo-content">
+                                <span class="todo-text">Complete weekly raid preparation</span>
+                                <span class="todo-priority high">High Priority</span>
+                            </div>
+                            <div class="todo-actions">
+                                <button class="edit-btn" onclick="editTodo(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteTodo(this)">🗑️</button>
+                            </div>
+                        </div>
+                        <div class="todo-item">
+                            <div class="todo-checkbox">
+                                <input type="checkbox" id="todo-2">
+                                <label for="todo-2"></label>
+                            </div>
+                            <div class="todo-content">
+                                <span class="todo-text">Update guild inventory</span>
+                                <span class="todo-priority medium">Medium Priority</span>
+                            </div>
+                            <div class="todo-actions">
+                                <button class="edit-btn" onclick="editTodo(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteTodo(this)">🗑️</button>
+                            </div>
+                        </div>
+                        <div class="todo-item">
+                            <div class="todo-checkbox">
+                                <input type="checkbox" id="todo-3" checked>
+                                <label for="todo-3"></label>
+                            </div>
+                            <div class="todo-content">
+                                <span class="todo-text completed">Review new member applications</span>
+                                <span class="todo-priority low">Low Priority</span>
+                            </div>
+                            <div class="todo-actions">
+                                <button class="edit-btn" onclick="editTodo(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteTodo(this)">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-todo-section">
+                    <h4>Add New Task</h4>
+                    <div class="add-todo-form">
+                        <input type="text" id="todo-text" class="form-input" placeholder="Task description">
+                        <select id="todo-priority" class="form-input">
+                            <option value="low">Low Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <button class="add-todo-btn" onclick="addTodo()">Add Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="events" class="content-area hidden">
+            <div class="events-header">
+                <h2>Guild Events</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="events-container">
+                <div class="events-overview">
+                    <h3>Upcoming Events</h3>
+                    <div class="overview-line"></div>
+                    <div class="events-list" id="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <div class="event-day">15</div>
+                                <div class="event-month">DEC</div>
+                            </div>
+                            <div class="event-content">
+                                <h4 class="event-title">Weekly Raid Night</h4>
+                                <p class="event-description">Main progression raid - bring your A-game!</p>
+                                <div class="event-meta">
+                                    <span class="event-time">8:00 PM EST</span>
+                                    <span class="event-participants">24/25</span>
+                                </div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="edit-btn" onclick="editEvent(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteEvent(this)">🗑️</button>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <div class="event-day">18</div>
+                                <div class="event-month">DEC</div>
+                            </div>
+                            <div class="event-content">
+                                <h4 class="event-title">Guild Meeting</h4>
+                                <p class="event-description">Monthly guild discussion and planning</p>
+                                <div class="event-meta">
+                                    <span class="event-time">7:00 PM EST</span>
+                                    <span class="event-participants">All Members</span>
+                                </div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="edit-btn" onclick="editEvent(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteEvent(this)">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-event-section">
+                    <h4>Add New Event</h4>
+                    <div class="add-event-form">
+                        <input type="text" id="event-title" class="form-input" placeholder="Event title">
+                        <input type="text" id="event-description" class="form-input" placeholder="Event description">
+                        <input type="date" id="event-date" class="form-input">
+                        <input type="time" id="event-time" class="form-input">
+                        <button class="add-event-btn" onclick="addEvent()">Add Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="forhire" class="content-area hidden">
+            <div class="forhire-header">
+                <h2>For Hire</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="forhire-container">
+                <div class="forhire-overview">
+                    <h3>Available Services</h3>
+                    <div class="overview-line"></div>
+                    <div class="forhire-list" id="forhire-list">
+                        <div class="forhire-item">
+                            <div class="forhire-avatar">
+                                <img src="Images/sama.png" alt="Toji">
+                            </div>
+                            <div class="forhire-content">
+                                <h4 class="forhire-title">Raid Carry Service</h4>
+                                <p class="forhire-description">Professional raid completion with guaranteed loot</p>
+                                <div class="forhire-meta">
+                                    <span class="forhire-price">$50/run</span>
+                                    <span class="forhire-availability">Available</span>
+                                </div>
+                            </div>
+                            <div class="forhire-actions">
+                                <button class="edit-btn" onclick="editForHire(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteForHire(this)">🗑️</button>
+                            </div>
+                        </div>
+                        <div class="forhire-item">
+                            <div class="forhire-avatar">
+                                <img src="Images/sama.png" alt="Sarah">
+                            </div>
+                            <div class="forhire-content">
+                                <h4 class="forhire-title">Crafting Services</h4>
+                                <p class="forhire-description">High-quality gear crafting with materials provided</p>
+                                <div class="forhire-meta">
+                                    <span class="forhire-price">$25/item</span>
+                                    <span class="forhire-availability">Available</span>
+                                </div>
+                            </div>
+                            <div class="forhire-actions">
+                                <button class="edit-btn" onclick="editForHire(this)">✏️</button>
+                                <button class="delete-btn" onclick="deleteForHire(this)">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-forhire-section">
+                    <h4>Add New Service</h4>
+                    <div class="add-forhire-form">
+                        <input type="text" id="forhire-title" class="form-input" placeholder="Service title">
+                        <input type="text" id="forhire-description" class="form-input" placeholder="Service description">
+                        <input type="text" id="forhire-price" class="form-input" placeholder="Price">
+                        <select id="forhire-availability" class="form-input">
+                            <option value="Available">Available</option>
+                            <option value="Busy">Busy</option>
+                            <option value="Unavailable">Unavailable</option>
+                        </select>
+                        <button class="add-forhire-btn" onclick="addForHire()">Add Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="member-profile-modal" class="modal hidden">
+            <div class="modal-content member-profile-content">
+                <div class="modal-header">
+                    <h3 id="member-profile-title">MEMBER PROFILE</h3>
+                    <button class="close-btn" onclick="closeMemberProfile()">×</button>
+                </div>
+                <div class="member-profile-body">
+                    <div class="member-profile-header">
+                        <div class="member-profile-avatar">
+                            <img src="Images/sama.png" alt="Member Avatar" id="member-profile-avatar">
+                            <div class="member-status-ring" id="member-status-ring"></div>
+                        </div>
+                        <div class="member-profile-info">
+                            <h2 id="member-name">Member Name</h2>
+                            <div class="member-rank" id="member-rank">Rank</div>
+                            <div class="member-status" id="member-status">Status</div>
+                            <button class="edit-rank-btn" onclick="openMemberRankEditor()">EDIT RANK</button>
+                        </div>
+                    </div>
+                    
+                    <div class="member-profile-section">
+                        <h4 class="section-title">HARVEST ROLE PREFERENCES</h4>
+                        <div class="member-roles-display" id="member-roles-display">
+                            <!-- Roles will be populated here -->
+                        </div>
+                        <button class="edit-roles-btn" onclick="openMemberRoleEditor()">EDIT ROLES</button>
+                    </div>
+                    
+                    <div class="member-profile-section">
+                        <h4 class="section-title">MEMBER STATISTICS</h4>
+                        <div class="member-stats-grid">
+                            <div class="member-stat-item">
+                                <div class="stat-icon">📅</div>
+                                <div class="stat-info">
+                                    <div class="stat-label">MEMBER SINCE</div>
+                                    <div class="stat-value">2024-01-15</div>
+                                </div>
+                            </div>
+                            <div class="member-stat-item">
+                                <div class="stat-icon">🎯</div>
+                                <div class="stat-info">
+                                    <div class="stat-label">RAIDS COMPLETED</div>
+                                    <div class="stat-value">32</div>
+                                </div>
+                            </div>
+                            <div class="member-stat-item">
+                                <div class="stat-icon">⭐</div>
+                                <div class="stat-info">
+                                    <div class="stat-label">ACHIEVEMENTS</div>
+                                    <div class="stat-value">18</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="member-profile-section">
+                        <h4 class="section-title">ACTIVITY LOGS</h4>
+                        <div class="member-logs-container" id="member-logs-container">
+                            <!-- Logs will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="member-role-modal" class="modal hidden">
+            <div class="modal-content member-role-content">
+                <div class="modal-header">
+                    <h3 id="member-role-title">EDIT MEMBER ROLES</h3>
+                    <button class="close-btn" onclick="closeMemberRoleEditor()">×</button>
+                </div>
+                <div class="member-role-body">
+                    <div class="role-editor-section">
+                        <h4>HARVEST ROLE PREFERENCES</h4>
+                        <div class="member-role-preferences-list">
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-scout" class="member-role-checkbox">
+                                <label for="member-role-scout" class="role-label">SCOUT</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-flight-commander" class="member-role-checkbox">
+                                <label for="member-role-flight-commander" class="role-label">FLIGHT COMMANDER</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-carrier-pilot" class="member-role-checkbox">
+                                <label for="member-role-carrier-pilot" class="role-label">CARRIER PILOT</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-assault-pilot" class="member-role-checkbox">
+                                <label for="member-role-assault-pilot" class="role-label">ASSAULT PILOT</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-guard" class="member-role-checkbox">
+                                <label for="member-role-guard" class="role-label">GUARD</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-escort" class="member-role-checkbox">
+                                <label for="member-role-escort" class="role-label">ESCORT</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-thumper" class="member-role-checkbox">
+                                <label for="member-role-thumper" class="role-label">THUMPER</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-harvester" class="member-role-checkbox">
+                                <label for="member-role-harvester" class="role-label">HARVESTER</label>
+                            </div>
+                            <div class="role-preference-item">
+                                <input type="checkbox" id="member-role-mechanic" class="member-role-checkbox">
+                                <label for="member-role-mechanic" class="role-label">MECHANIC</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-role-actions">
+                        <button class="save-member-roles-btn" onclick="saveMemberRoles()">SAVE CHANGES</button>
+                        <button class="cancel-member-roles-btn" onclick="closeMemberRoleEditor()">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="member-rank-modal" class="modal hidden">
+            <div class="modal-content member-rank-content">
+                <div class="modal-header">
+                    <h3 id="member-rank-title">EDIT MEMBER RANK</h3>
+                    <button class="close-btn" onclick="closeMemberRankEditor()">×</button>
+                </div>
+                <div class="member-rank-body">
+                    <div class="rank-editor-section">
+                        <h4>GUILD RANK</h4>
+                        <select id="member-rank-select" class="rank-select">
+                            <option value="Member">Member</option>
+                            <option value="Moderator">Moderator</option>
+                            <option value="Administrator">Administrator</option>
+                            <option value="Officer">Officer</option>
+                            <option value="Veteran">Veteran</option>
+                            <option value="Recruit">Recruit</option>
+                        </select>
+                    </div>
+                    <div class="member-rank-actions">
+                        <button class="save-member-rank-btn" onclick="saveMemberRank()">SAVE CHANGES</button>
+                        <button class="cancel-member-rank-btn" onclick="closeMemberRankEditor()">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
