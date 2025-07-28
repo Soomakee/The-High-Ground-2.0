@@ -671,10 +671,12 @@ function initializeHomePage() {
     sessionTimer = setInterval(updateSessionTimer, 1000);
     
     // Add initial system logs
-    setTimeout(() => addSystemLog('Home terminal activated'), 500);
-    setTimeout(() => addSystemLog('User interface loaded'), 1000);
-    setTimeout(() => addSystemLog('Guild overview loaded'), 1500);
-    setTimeout(() => addSystemLog('Quick access modules ready'), 2000);
+    setTimeout(() => addSystemLog('Spice melange levels optimal'), 500);
+    setTimeout(() => addSystemLog('Sandworm activity minimal'), 1000);
+    setTimeout(() => addSystemLog('Stillsuit hydration systems online'), 1500);
+    setTimeout(() => addSystemLog('Fremen scouts reporting clear'), 2000);
+    setTimeout(() => addSystemLog('Harvester crews ready for deployment'), 2500);
+    setTimeout(() => addSystemLog('Guild operations proceeding smoothly'), 3000);
 }
 
 // Initialize event listeners when DOM is loaded
@@ -982,6 +984,24 @@ function deleteEvent(button) {
     if (confirm('Are you sure you want to delete this event?')) {
         button.closest('.event-item').remove();
     }
+}
+
+function openEventPoster(title, description, day, month, time, participants, priority) {
+    // Update poster content with event details
+    document.getElementById('poster-title').textContent = title;
+    document.getElementById('poster-description').textContent = description;
+    document.getElementById('poster-day').textContent = day;
+    document.getElementById('poster-month').textContent = month;
+    document.getElementById('poster-time').textContent = time;
+    document.getElementById('poster-participants').textContent = participants;
+    document.getElementById('poster-priority').textContent = priority;
+    
+    // Show the modal
+    document.getElementById('event-poster-modal').classList.remove('hidden');
+}
+
+function closeEventPoster() {
+    document.getElementById('event-poster-modal').classList.add('hidden');
 }
 
 // For Hire Functions

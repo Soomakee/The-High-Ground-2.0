@@ -2024,16 +2024,16 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 20px;
-    overflow-y: auto;
+    gap: 15px;
+    padding: 15px;
+    overflow: hidden;
 }
 
 .welcome-header {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px 0;
+    padding: 10px 0;
     border-bottom: 1px solid rgba(139, 92, 246, 0.2);
     position: relative;
 }
@@ -2079,7 +2079,7 @@ body {
 
 .welcome-title {
     color: #e4e4e7;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 300;
     letter-spacing: 2px;
     margin: 0;
@@ -2102,13 +2102,13 @@ body {
 }
 
 .welcome-info-section {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 10px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -2116,7 +2116,7 @@ body {
 .overview-card {
     background: rgba(26, 26, 26, 0.8);
     border: 1px solid rgba(139, 92, 246, 0.2);
-    padding: 20px;
+    padding: 15px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -2195,13 +2195,13 @@ body {
 .access-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    gap: 10px;
 }
 
 .access-card {
     background: rgba(26, 26, 26, 0.8);
     border: 1px solid rgba(139, 92, 246, 0.2);
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2276,15 +2276,15 @@ body {
 }
 
 .system-log {
-    margin: 20px 0;
+    margin: 10px 0;
     flex: 1;
 }
 
 .log-entries {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(139, 92, 246, 0.2);
-    padding: 15px;
-    max-height: 200px;
+    padding: 10px;
+    max-height: 150px;
     overflow-y: auto;
 }
 
@@ -3286,6 +3286,7 @@ body {
     border: 1px solid #404040;
     border-radius: 8px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .event-item:hover {
@@ -3602,4 +3603,209 @@ body {
 
 .add-forhire-btn:hover::after {
     height: 60%;
+}
+
+/* Event Poster Modal */
+.event-poster-content {
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.event-poster-body {
+    padding: 0;
+    overflow: hidden;
+}
+
+.event-poster {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #1a1a1a 100%);
+    border: 2px solid #8b5cf6;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.event-poster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.1) 50%, transparent 70%);
+    animation: posterShine 3s ease-in-out infinite;
+}
+
+@keyframes posterShine {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}
+
+.poster-header {
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.poster-date {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    min-width: 60px;
+}
+
+.poster-day {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.poster-month {
+    color: #e4e4e7;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.poster-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+    margin: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.poster-priority {
+    background: rgba(0, 0, 0, 0.3);
+    color: #fbbf24;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.poster-content {
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.poster-description {
+    color: #e4e4e7;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: center;
+    font-style: italic;
+}
+
+.poster-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.poster-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.detail-icon {
+    font-size: 1.2rem;
+}
+
+.detail-label {
+    color: #a1a1aa;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 80px;
+}
+
+.detail-value {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.poster-footer {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 30px;
+    border-top: 1px solid rgba(139, 92, 246, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.poster-guild-info {
+    text-align: center;
+}
+
+.guild-name {
+    color: #8b5cf6;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.guild-motto {
+    color: #71717a;
+    font-size: 0.7rem;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .event-poster-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .poster-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .poster-title {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+    
+    .poster-content {
+        padding: 20px;
+    }
+    
+    .poster-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .poster-detail-item {
+        padding: 10px;
+    }
 }

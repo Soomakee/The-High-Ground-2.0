@@ -74,24 +74,24 @@
                     <h3 class="section-title">GUILD OVERVIEW</h3>
                     <div class="overview-grid">
                         <div class="overview-card">
-                            <div class="overview-icon">👥</div>
+                            <div class="overview-icon">🏜️</div>
                             <div class="overview-info">
-                                <div class="overview-label">ACTIVE MEMBERS</div>
-                                <div class="overview-value">32</div>
+                                <div class="overview-label">SPICE HARVEST</div>
+                                <div class="overview-value">47.2K</div>
                             </div>
                         </div>
                         <div class="overview-card">
-                            <div class="overview-icon">📦</div>
+                            <div class="overview-icon">🐛</div>
                             <div class="overview-info">
-                                <div class="overview-label">INVENTORY ITEMS</div>
-                                <div class="overview-value">8</div>
+                                <div class="overview-label">WORM ALERTS</div>
+                                <div class="overview-value">0</div>
                             </div>
                         </div>
                         <div class="overview-card">
-                            <div class="overview-icon">⚡</div>
+                            <div class="overview-icon">💧</div>
                             <div class="overview-info">
-                                <div class="overview-label">SYSTEM STATUS</div>
-                                <div class="overview-value">OPTIMAL</div>
+                                <div class="overview-label">WATER SUPPLY</div>
+                                <div class="overview-value">98%</div>
                             </div>
                         </div>
                         <div class="overview-card">
@@ -790,7 +790,7 @@
                     <h3>Upcoming Events</h3>
                     <div class="overview-line"></div>
                     <div class="events-list" id="events-list">
-                        <div class="event-item">
+                        <div class="event-item" onclick="openEventPoster('Weekly Raid Night', 'Main progression raid - bring your A-game!', '15', 'DEC', '8:00 PM EST', '24/25', 'High Priority')">
                             <div class="event-date">
                                 <div class="event-day">15</div>
                                 <div class="event-month">DEC</div>
@@ -808,7 +808,7 @@
                                 <button class="delete-btn" onclick="deleteEvent(this)">🗑️</button>
                             </div>
                         </div>
-                        <div class="event-item">
+                        <div class="event-item" onclick="openEventPoster('Guild Meeting', 'Monthly guild discussion and planning', '18', 'DEC', '7:00 PM EST', 'All Members', 'Medium Priority')">
                             <div class="event-date">
                                 <div class="event-day">18</div>
                                 <div class="event-month">DEC</div>
@@ -1058,6 +1058,60 @@
                 <div class="activity-logs-body">
                     <div class="member-logs-container" id="member-logs-container">
                         <!-- Logs will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="event-poster-modal" class="modal hidden">
+            <div class="modal-content event-poster-content">
+                <div class="modal-header">
+                    <h3 id="event-poster-title">EVENT POSTER</h3>
+                    <button class="close-btn" onclick="closeEventPoster()">×</button>
+                </div>
+                <div class="event-poster-body">
+                    <div class="event-poster">
+                        <div class="poster-header">
+                            <div class="poster-date">
+                                <div class="poster-day" id="poster-day">15</div>
+                                <div class="poster-month" id="poster-month">DEC</div>
+                            </div>
+                            <div class="poster-title" id="poster-title">Weekly Raid Night</div>
+                            <div class="poster-priority" id="poster-priority">High Priority</div>
+                        </div>
+                        <div class="poster-content">
+                            <div class="poster-description" id="poster-description">
+                                Main progression raid - bring your A-game!
+                            </div>
+                            <div class="poster-details">
+                                <div class="poster-detail-item">
+                                    <span class="detail-icon">🕐</span>
+                                    <span class="detail-label">Time:</span>
+                                    <span class="detail-value" id="poster-time">8:00 PM EST</span>
+                                </div>
+                                <div class="poster-detail-item">
+                                    <span class="detail-icon">👥</span>
+                                    <span class="detail-label">Participants:</span>
+                                    <span class="detail-value" id="poster-participants">24/25</span>
+                                </div>
+                                <div class="poster-detail-item">
+                                    <span class="detail-icon">📍</span>
+                                    <span class="detail-label">Location:</span>
+                                    <span class="detail-value">Guild Hall</span>
+                                </div>
+                                <div class="poster-detail-item">
+                                    <span class="detail-icon">🎯</span>
+                                    <span class="detail-label">Objective:</span>
+                                    <span class="detail-value">Progression Raid</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="poster-footer">
+                            <div class="poster-guild-info">
+                                <span class="guild-name">THE HIGH GROUND</span>
+                                <span class="guild-motto">Elevating Guild Management</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
