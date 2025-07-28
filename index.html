@@ -961,9 +961,7 @@
                     
                     <div class="member-profile-section">
                         <h4 class="section-title">ACTIVITY LOGS</h4>
-                        <div class="member-logs-container" id="member-logs-container">
-                            <!-- Logs will be populated here -->
-                        </div>
+                        <button class="view-activity-logs-btn" onclick="openActivityLogs()">VIEW ACTIVITY LOGS</button>
                     </div>
                 </div>
             </div>
@@ -1046,6 +1044,20 @@
                     <div class="member-rank-actions">
                         <button class="save-member-rank-btn" onclick="saveMemberRank()">SAVE CHANGES</button>
                         <button class="cancel-member-rank-btn" onclick="closeMemberRankEditor()">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="activity-logs-modal" class="modal hidden">
+            <div class="modal-content activity-logs-content">
+                <div class="modal-header">
+                    <h3 id="activity-logs-title">MEMBER ACTIVITY LOGS</h3>
+                    <button class="close-btn" onclick="closeActivityLogs()">×</button>
+                </div>
+                <div class="activity-logs-body">
+                    <div class="member-logs-container" id="member-logs-container">
+                        <!-- Logs will be populated here -->
                     </div>
                 </div>
             </div>

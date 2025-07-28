@@ -68,6 +68,10 @@ body {
     margin: 0;
 }
 
+
+
+
+
 .role-selector {
     background: transparent;
     color: #a1a1aa;
@@ -563,6 +567,47 @@ body {
     color: white;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Activity Logs Button */
+.view-activity-logs-btn {
+    background: transparent;
+    color: #8b5cf6;
+    border: 1px solid #8b5cf6;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+}
+
+.view-activity-logs-btn:hover {
+    background: #8b5cf6;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Activity Logs Modal Styles */
+.activity-logs-content {
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+}
+
+.activity-logs-body {
+    padding: 30px;
+    max-height: calc(80vh - 80px);
+    overflow-y: auto;
+}
+
+.activity-logs-body .member-logs-container {
+    max-height: none;
+    overflow-y: visible;
 }
 
 /* Member Role Modal Styles */

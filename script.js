@@ -26,6 +26,7 @@ function showContent(section) {
 }
 
 function showProfile() {
+    
     const contentAreas = document.querySelectorAll('.content-area');
     contentAreas.forEach(area => {
         area.classList.add('hidden');
@@ -143,7 +144,7 @@ function showProfile() {
                 </div>
                 
                 <div class="profile-actions">
-                    <button class="action-btn primary" onclick="openHarvestRolePreferences()">EDIT PROFILE</button>
+                    <button class="action-btn primary" onclick="openHarvestRolePreferences()">EDIT ROLE PREFERENCE</button>
                     <button class="action-btn secondary">CHANGE PASSWORD</button>
                     <button class="action-btn secondary">PRIVACY SETTINGS</button>
                 </div>
@@ -220,13 +221,19 @@ function showProfile() {
     }
 }
 
-function logout() {
-    if (confirm('Are you sure you want to logout?')) {
-        alert('You have been logged out successfully!');
-        // Here you would typically redirect to a login page or clear session data
-        // window.location.href = 'login.html';
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function updateProfileRole(newRole) {
     // Update the role in the sidebar
@@ -672,6 +679,10 @@ function initializeHomePage() {
 
 // Initialize event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the page
+    initializePage();
+    
+
     // Close modal when clicking outside
     document.addEventListener('click', function(event) {
         const logsModal = document.getElementById('logs-modal');
@@ -1160,8 +1171,7 @@ function openMemberProfile(name, rank, status, roles) {
         rolesDisplay.innerHTML = '<div class="no-roles">No roles selected</div>';
     }
     
-    // Generate and display member logs
-    generateMemberLogs(name, logsContainer);
+    // Logs will be generated when the activity logs modal is opened
     
     // Show modal
     modal.classList.remove('hidden');
@@ -1258,6 +1268,33 @@ function generateMemberLogs(memberName, container) {
 
 function closeMemberProfile() {
     const modal = document.getElementById('member-profile-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
+function openActivityLogs() {
+    const modal = document.getElementById('activity-logs-modal');
+    const title = document.getElementById('activity-logs-title');
+    const logsContainer = document.getElementById('member-logs-container');
+    
+    // Update modal title with current member name
+    const memberName = document.getElementById('member-name');
+    if (memberName) {
+        title.textContent = `${memberName.textContent.toUpperCase()} - ACTIVITY LOGS`;
+    }
+    
+    // Generate logs for the current member
+    if (currentMemberData && currentMemberData.name) {
+        generateMemberLogs(currentMemberData.name, logsContainer);
+    }
+    
+    // Show modal
+    modal.classList.remove('hidden');
+}
+
+function closeActivityLogs() {
+    const modal = document.getElementById('activity-logs-modal');
     if (modal) {
         modal.classList.add('hidden');
     }
