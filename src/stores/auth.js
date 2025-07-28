@@ -11,7 +11,7 @@ export const useAuthStore = defineStore('auth', () => {
   const discordRoles = ref([])
 
   // Discord OAuth2 Configuration
-  const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID
+  const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID || 'placeholder'
   const DISCORD_REDIRECT_URI = import.meta.env.VITE_DISCORD_REDIRECT_URI || 'http://localhost:5173/auth/callback'
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'
 
@@ -46,6 +46,10 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Actions
   const loginWithDiscord = () => {
+    if (DISCORD_CLIENT_ID === 'placeholder') {
+      console.warn('Discord OAuth2 not configured yet')
+      return
+    }
     const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${encodeURIComponent(DISCORD_REDIRECT_URI)}&response_type=code&scope=identify%20guilds.members.read`
     window.location.href = authUrl
   }
